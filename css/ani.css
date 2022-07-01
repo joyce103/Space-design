@@ -1,0 +1,68 @@
+.start{
+  opacity: 0;
+}
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 6s linear alternate 1;
+  fill:none;
+  animation-delay: 2.5s;
+  animation-fill-mode: forwards;
+}
+
+#num{
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  animation: out 3s linear 1;
+  /*animation-delay: 2.5s;*/
+  animation-fill-mode: forwards;
+}
+#headertext{
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  animation: out 3s linear 1;
+  /*animation-delay: 4s;*/
+  animation-fill-mode: forwards;
+}
+
+@keyframes dash {
+  0% {
+    opacity: 1;
+  	stroke-dashoffset: 1000;
+  }
+  50% {
+    stroke-dashoffset: 0;
+    fill:rgba(255,255,255,0);
+  }
+  100%{ 
+    stroke-dashoffset: 0;
+ 	  fill:rgba(255,255,255,1);
+  }
+}
+@keyframes out{
+  0% {
+    opacity: 1;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+
+  100%{ 
+    opacity: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+circle {
+  fill:rgba(0,0,0,0);
+  stroke-width:31.8309886184;
+  stroke-dasharray: 0,0,0,100;
+  stroke-dashoffset: 25;
+  /*-webkit-animation: pie1 3s 4 ease ;*/
+}
+.pie1 {
+  stroke:#CFA636;
+  -webkit-animation: pie1 3s 1 ease ;
+  animation-fill-mode: forwards;
+}
+@-webkit-keyframes pie1 {
+  50%,100% {stroke-dasharray:100,0,0,0;}
+}
+@keyframes pie1 {
+  50%,100% {stroke-dasharray:100,0,0,0;}
+}
